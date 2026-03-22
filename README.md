@@ -133,6 +133,7 @@ KNOWLEDGE LAYER
 5. **TTS**: gemini tts API generates Armenian speech from response text → streaming audio
 6. **Output**: Audio streamed back to client via LiveKit
 
+--- 
 
 ### 2. Scraping Strategy
 
@@ -145,6 +146,8 @@ KNOWLEDGE LAYER
  - Standard HTML scraping for Branches
 
  - Outputs clean JSON with metadata (category, bank_name, source_url)
+
+---
 
 ### 3. Guardrails — 3 Layers
 
