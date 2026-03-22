@@ -27,7 +27,25 @@ Build an end-to-end voice assistant using self-hosted LiveKit that:
 * **paraphrase-multilingual-MiniLM-L12-v2** — multilingual embeddings with good Armenian support
 
 ---
+## 📂 Project Structure
 
+
+```text
+armenian-bank-voice-ai/
+├── src/
+│   ├── agent/          # Core LiveKit agent and assistant logic
+│   ├── audio/          # STT and TTS wrappers
+│   ├── rag/            # RAG pipeline: indexing and retrieval
+│   ├── scraping/       # Web scrapers for Armenian bank websites
+│   |     ├── utils/          # Text processing and common utilities
+|   |     └── scraper.py
+│   └── vectorstore/    # ChromaDB management logic
+├── config/             # YAML configurations for banks and agent
+├── data/               # Raw and processed data storage
+├── scripts/            # Data ingestion and utility scripts
+├── pyproject.toml      # Project dependencies (managed by uv)
+└── .env                # Environment variables (secret)
+```
 ## ⚙️ Setup Instructions
 ### Prerequisites
 Ensure you have `uv` installed on your system.
@@ -79,29 +97,7 @@ uv run -m src.agent.main console
 
 ---
 
-## 🏗️ Architecture & Decisions
-
-## 📂 Project Structure
-
-
-```text
-armenian-bank-voice-ai/
-├── src/
-│   ├── agent/          # Core LiveKit agent and assistant logic
-│   ├── audio/          # STT and TTS wrappers
-│   ├── rag/            # RAG pipeline: indexing and retrieval
-│   ├── scraping/       # Web scrapers for Armenian bank websites
-│   |     ├── utils/          # Text processing and common utilities
-|   |     └── scraper.py
-│   └── vectorstore/    # ChromaDB management logic
-├── config/             # YAML configurations for banks and agent
-├── data/               # Raw and processed data storage
-├── scripts/            # Data ingestion and utility scripts
-├── pyproject.toml      # Project dependencies (managed by uv)
-└── .env                # Environment variables (secret)
-```
-
-##  System Architecture
+## 🏗️  Architecture & Decisions
 
 ```
 CLIENT (Web/Mobile/Telephony)
@@ -129,7 +125,7 @@ KNOWLEDGE LAYER
     └─────────────────┘    └──────────────────┘    └───────────────────┘
 ```
 
-### Audio Pipeline Flow
+### 1. Audio Pipeline Flow
 1. **Input**: Client audio via WebRTC/SIP → Silero VAD detects speech
 2. **STT**: whisper-large-v3 processes audio → Armenian text
 3. **LLM**: gemini-2.5-flash receives text + system prompt + RAG context → generates response
@@ -138,9 +134,9 @@ KNOWLEDGE LAYER
 6. **Output**: Audio streamed back to client via LiveKit
 
 
-### Scraping Strategy
+### 2. Scraping Strategy
 
- -Config-driven scraper for Armenian banking sites.
+ Config-driven scraper for Armenian banking sites.
 
  - Supports multiple banks via banks.yaml (no code changes)
 
@@ -150,7 +146,7 @@ KNOWLEDGE LAYER
 
  - Outputs clean JSON with metadata (category, bank_name, source_url)
 
-### Guardrails — 3 Layers
+### 3. Guardrails — 3 Layers
 
 1. **System Prompt** (primary):
    - Explicit: "Only answer questions about Credits, Deposits, and Branch Locations."
