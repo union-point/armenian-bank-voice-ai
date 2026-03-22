@@ -1,22 +1,22 @@
 banks:
-  # idbank:
-  #   base_url: "https://www.idbank.am"
-  #   credits_urls:
-  #     - "https://idbank.am/credits/loans-without-collateral/rocket-loan/?tab-id=tarifs"
-  #   deposits_urls:
-  #     - "https://idbank.am/deposits/deposit_safe/replenish/?tab-id=tarifs"
-  #   branches_url: "https://idbank.am/information/about/branches-and-atms/"
-  #   pdf_link_selector: "a[href*='.pdf']" 
-  #   branch_selector: ".branches-info"
-  # vtb:
-  #   base_url: "https://www.vtb.am/"
-  #   credits_urls:
-  #     - "https://www.vtb.am/am/credits/consumer-loan"
-  #   deposits_urls:
-  #     - "https://www.vtb.am/am/deposit/stable"
-  #   branches_url: "https://www.vtb.am/am/map"
-  #   pdf_link_selector: "a[href*='.pdf']"
-  #   branch_selector: ".branches-info"
+   idbank:
+     base_url: "https://www.idbank.am"
+     credits_urls:
+       - "https://idbank.am/credits/loans-without-collateral/rocket-loan/?tab-id=tarifs"
+     deposits_urls:
+       - "https://idbank.am/deposits/deposit_safe/replenish/?tab-id=tarifs"
+     branches_url: "https://idbank.am/information/about/branches-and-atms/"
+     pdf_link_selector: "a[href*='.pdf']" 
+     branch_selector: ".branches-info"
+   vtb:
+     base_url: "https://www.vtb.am/"
+     credits_urls:
+       - "https://www.vtb.am/am/credits/consumer-loan"
+     deposits_urls:
+       - "https://www.vtb.am/am/deposit/stable"
+     branches_url: "https://www.vtb.am/am/map"
+     pdf_link_selector: "a[href*='.pdf']"
+     branch_selector: ".branches-info"
 
 
   acba:
