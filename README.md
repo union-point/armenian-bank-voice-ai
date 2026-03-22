@@ -65,7 +65,7 @@ uv run -m src.agent.main download-files
 ### 2. Run infrastructure
 
 ```bash
-sudo docker run -d --name livekit \ --network host \ livekit/livekit-server \ --dev
+sudo docker run -d --name livekit  --network host  livekit/livekit-server  --dev
 ```
 ### 3. Environment Setup
 Copy the example environment file and fill in your API keys:
