@@ -1,0 +1,27 @@
+[project]
+name = "armenian-bank-voice-ai"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "chromadb>=1.5.5",
+    "faster-whisper>=1.2.1",
+    "livekit-agents[google,groq,silero,turn-detector]~=1.4",
+    "livekit-plugins-google>=1.4.6",
+    "llama-index>=0.14.18",
+    "llama-index-core>=0.14.18",
+    "llama-index-embeddings-huggingface>=0.7.0",
+    "llama-index-llms-gemini>=0.6.2",
+    "llama-index-vector-stores-chroma>=0.5.5",
+    "numpy>=2.4.3",
+    "openai>=2.29.0",
+    "pdfminer-six>=20260107",
+    "pypdf>=6.9.1",
+    "pytest>=9.0.2",
+    "python-dotenv>=1.2.2",
+    "pyyaml>=6.0.3",
+    "sentence-transformers>=5.3.0",
+    "trafilatura>=2.0.0",
+    "transformers>=4.57.1",
+    "uvicorn>=0.42.0",
+]
